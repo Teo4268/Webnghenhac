@@ -4,6 +4,7 @@ const playPauseBtn = document.getElementById("play-pause");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const progressBar = document.getElementById("progress-bar");
+const trackName = document.getElementById("track-name");
 
 // Tạo đối tượng audio
 let currentTrackIndex = 0;
@@ -13,19 +14,29 @@ const audio = new Audio();
 function loadTrack(index) {
     currentTrackIndex = index;
     const trackSrc = playlist[index].getAttribute("data-src");
+    const trackTitle = playlist[index].getAttribute("data-name");
+    
     audio.src = trackSrc;
+    trackName.textContent = trackTitle;
     audio.play();
-    playPauseBtn.textContent = "⏸️";
+    playPauseBtn.innerHTML = `<svg id="pause-icon" viewBox="0 0 24 24">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                              </svg>`;
 }
 
 // Điều khiển nút Play/Pause
 playPauseBtn.addEventListener("click", () => {
+    const playIcon = document.getElementById("play-icon");
+    const pauseIcon = document.getElementById("pause-icon");
+
     if (audio.paused) {
         audio.play();
-        playPauseBtn.textContent = "⏸️";
+        playIcon.style.display = "none";
+        pauseIcon.style.display = "block";
     } else {
         audio.pause();
-        playPauseBtn.textContent = "▶️";
+        playIcon.style.display = "block";
+        pauseIcon.style.display = "none";
     }
 });
 
