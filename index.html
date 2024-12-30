@@ -16,19 +16,35 @@
         <!-- Danh sách bài hát -->
         <main>
             <ul id="playlist">
-                <li data-src="song/De Anh Luong Thien - Thang Eo Vi || Full Option.mp3">Bài hát 1</li>
-                <li data-src="song2.wav">Bài hát 2</li>
-                <li data-src="song3.mp3">Bài hát 3</li>
+                <li data-src="song1.mp3" data-name="Bài hát 1">Bài hát 1</li>
+                <li data-src="song2.wav" data-name="Bài hát 2">Bài hát 2</li>
+                <li data-src="song3.mp3" data-name="Bài hát 3">Bài hát 3</li>
             </ul>
         </main>
 
         <!-- Trình phát nhạc -->
         <footer>
             <div id="player">
-                <button id="prev">⏮️</button>
-                <button id="play-pause">▶️</button>
-                <button id="next">⏭️</button>
+                <button id="prev">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M11 18V6l-8.5 6L11 18zm1 0l8.5-6L12 6v12z"></path>
+                    </svg>
+                </button>
+                <button id="play-pause">
+                    <svg id="play-icon" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7L8 5z"></path>
+                    </svg>
+                    <svg id="pause-icon" viewBox="0 0 24 24" style="display: none;">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+                    </svg>
+                </button>
+                <button id="next">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M13 18l8.5-6L13 6v12zM12 6v12L3.5 12 12 6z"></path>
+                    </svg>
+                </button>
                 <input type="range" id="progress-bar" min="0" max="100" value="0">
+                <div id="track-name">Bài hát 1</div>
             </div>
         </footer>
     </div>
