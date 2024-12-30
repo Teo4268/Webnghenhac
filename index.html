@@ -1,43 +1,39 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Nghe Nhạc</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <button id="back-button">Quay lại</button>
-        <input type="text" id="search-bar" placeholder="Tìm kiếm bài hát, nghệ sĩ, hoặc playlist">
-        <div id="recent-searches">
-            <h3>Tìm kiếm gần đây</h3>
-            <ul id="search-list"></ul>
-        </div>
-    </header>
-    <main>
-        <section id="featured-music">
-            <h2>Nhạc Nổi Bật</h2>
-            <ul>
-                <li>Micrology! - Sped Up - TEENWXVE, ANDROMEDA</li>
-                <li>Top 500 NCS Songs</li>
-                <li>The Best of NCS</li>
-                <li>Cartoon Network & Chill</li>
-                <li>Cartoon Network - VGR</li>
-                <li>Cartoon Network Theme Songs (Holiday Remix) - VGR</li>
-                <li>Cartoon Network Theme Songs - VGR Holiday Remix</li>
-                <li>Cartoon Network - Theme Songs Collection!</li>
+    <div class="container">
+        <!-- Thanh tìm kiếm -->
+        <header>
+            <input type="text" id="search-bar" placeholder="Tìm bài hát...">
+        </header>
+
+        <!-- Danh sách bài hát -->
+        <main>
+            <ul id="playlist">
+                <li data-src="song1.mp3">Bài hát 1</li>
+                <li data-src="song2.wav">Bài hát 2</li>
+                <li data-src="song3.mp3">Bài hát 3</li>
             </ul>
-        </section>
-        <section id="playback-controls">
-            <button id="shuffle">Xáo trộn</button>
-            <button id="play">Phát</button>
-            <button id="pause">Tạm dừng</button>
-        </section>
-    </main>
-    <footer>
-        <button id="remove-search">Xóa tìm kiếm</button>
-    </footer>
+        </main>
+
+        <!-- Trình phát nhạc -->
+        <footer>
+            <div id="player">
+                <button id="prev">⏮️</button>
+                <button id="play-pause">▶️</button>
+                <button id="next">⏭️</button>
+                <input type="range" id="progress-bar" min="0" max="100" value="0">
+            </div>
+        </footer>
+    </div>
+
+    <!-- Tập lệnh -->
     <script src="script.js"></script>
 </body>
 </html>
