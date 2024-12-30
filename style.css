@@ -22,14 +22,50 @@ header {
     margin-bottom: 20px;
 }
 
+.search-container {
+    position: relative;
+    width: 40px;
+    transition: width 0.3s ease;
+}
+
 #search-bar {
-    width: 100%;
+    width: 0;
+    height: 40px;
     padding: 10px;
     font-size: 16px;
-    border: none;
+    background-color: #121212;
+    color: #ffffff;
+    border: 2px solid #ffffff;
     border-radius: 5px;
     outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: width 0.3s ease;
+}
+
+#search-bar.open {
+    width: 200px;
+}
+
+/* Biểu tượng kính lúp */
+#search-icon {
+    background: #121212;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+#search-icon svg {
+    fill: #ffffff;
+}
+
+#search-bar:focus {
+    width: 200px;
 }
 
 /* Danh sách bài hát */
@@ -80,8 +116,8 @@ footer {
     background: #121212;
     border: 3px solid transparent;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,7 +159,7 @@ footer {
 /* Thanh tiến độ */
 #progress-bar {
     flex-grow: 1;
-    margin: 0 10px;
+    margin: 0 15px;
     height: 5px;
     background: #1db954;
     border-radius: 5px;
