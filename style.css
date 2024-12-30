@@ -75,25 +75,43 @@ footer {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Nút điều khiển */
 #player button {
-    background: linear-gradient(145deg, #1f1f1f, #292929);
-    border: none;
-    color: #ffffff;
-    font-size: 24px;
-    cursor: pointer;
+    background: #121212;
+    border: 3px solid transparent;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5), -3px -3px 8px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-size: 24px;
+    position: relative;
     transition: all 0.3s ease;
+}
+
+#player button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+    background-size: 400%;
+    animation: rainbow-border 5s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rainbow-border {
+    0% { background-position: 400% 0%; }
+    100% { background-position: 0% 100%; }
 }
 
 #player button:hover {
     transform: scale(1.1);
-    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7), -3px -3px 12px rgba(255, 255, 255, 0.2);
 }
 
 #player button svg {
@@ -102,6 +120,7 @@ footer {
     fill: #ffffff;
 }
 
+/* Thanh tiến độ */
 #progress-bar {
     flex-grow: 1;
     margin: 0 10px;
